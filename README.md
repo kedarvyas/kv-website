@@ -73,11 +73,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 | Color          | Hex                                                                |
 | -------------- | ------------------------------------------------------------------ |
-| Red           | ![#ED5A64](https://via.placeholder.com/10/0a192f?text=+) `#ED5A64` |
-| Light Red     | ![#F67981](https://via.placeholder.com/10/0a192f?text=+) `#F67981` |
-| Lightest Red  | ![#F78D94](https://via.placeholder.com/10/303C55?text=+) `#F78D94` |
-| Pink          | ![#FAB2B7](https://via.placeholder.com/10/8892b0?text=+) `#FAB2B7` |
+| Red           | ![#ED5A64](https://via.placeholder.com/10/ED5A64?text=+) `#ED5A64` |
+| Light Red     | ![#F67981](https://via.placeholder.com/10/F67981?text=+) `#F67981` |
+| Lightest Red  | ![#F78D94](https://via.placeholder.com/10/F78D94?text=+) `#F78D94` |
+| Pink          | ![#FAB2B7](https://via.placeholder.com/10/FAB2B7?text=+) `#FAB2B7` |
 | Light Pink    | ![#FCC5C8](https://via.placeholder.com/10/FCC5C8?text=+) `#FCC5C8` |
 | Lightest Pink | ![#FEECED](https://via.placeholder.com/10/FEECED?text=+) `#FEECED` |
 | White         | ![#F7F7F7](https://via.placeholder.com/10/F7F7F7?text=+) `#F7F7F7` |
-| Purple        | ![#64ffda](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` |
+| Purple        | ![#755BBD](https://via.placeholder.com/10/755BBD?text=+) `#755BBD` |
