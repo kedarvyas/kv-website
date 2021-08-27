@@ -53,7 +53,7 @@ canvas {
   color: var(--light-pink);
   font-family: "NTR", sans-serif;
   font-size: 20px;
-  max-width: 75%;
+  max-width: 95%;
   padding-top: 5px;
   padding-bottom: 50px;
 }
@@ -76,9 +76,6 @@ b {
 }
 
 @media only screen and (max-width: 600px) {
-  #gazi-model {
-    display: none;
-  }
 
   #intro {
     min-height: unset;

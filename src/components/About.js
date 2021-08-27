@@ -52,7 +52,7 @@ class About extends React.Component {
     ];
 
     const tech_items = tech_stack.map(stack => <li>{stack}</li>);
-    var image = require("./assets/me.jpg");
+    var image = require("/Users/kedarvyas/PersonalWebsite/kv-website/src/components/assets/me.jpg");
 
     return (
       <div id="about">

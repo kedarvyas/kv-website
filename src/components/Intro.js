@@ -27,9 +27,9 @@ class Intro extends React.Component {
       <div id="intro">
         <Typist avgTypingDelay={120}>
           <span className="intro-title">
-            {"hey there, i am "}
+            {"hello, "}
             <span className="intro-name">{"kedar"}</span>
-            {"."}
+            {" here."}
           </span>
         </Typist>
         <FadeInSection>
@@ -61,7 +61,7 @@ class Intro extends React.Component {
           >
            <EmailRoundedIcon></EmailRoundedIcon> 
             
-            {"  " + "let's get in touch."}
+            {"  " + "get in touch."}
           </a>
         </FadeInSection>
       </div>
