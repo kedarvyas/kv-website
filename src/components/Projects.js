@@ -23,14 +23,14 @@ class Projects extends React.Component {
     const projects = {
       "JavaScript Drum Kit": {
         desc:
-          "An application created for Toronto District School Board, with a Flask back-end and a Vue front-end.",
+          "A mini-project where I implemented a few functions using JavaScript (alongside HTML and CSS for webpage styling) to create a simple drumkit.",
         techStack: "JavaScript, HTML & CSS",
         link: "https://github.com/kedarvyas/Drum-Kit-JS",
         open: "https://kedarvyas.github.io/Drum-Kit-JS/"
       },
       "Etch-A-Sketch": {
         desc:
-          "A self-learning A.I. that learns to traverse through a complex maze using the genetic algorithm.",
+          "A mini-project where I recreated the functions of the popular mechanical drawing toy made by French inventor Andre Cassagnes.",
         techStack: "Javascript, HTML / CSS",
         link: "https://github.com/kedarvyas/etch-a-sketch",
         open: "https://kedarvyas.github.io/etch-a-sketch/"
