@@ -21,6 +21,13 @@ class Projects extends React.Component {
   }
   render() {
     const projects = {
+      "Kedar Personal Website": {
+        desc:
+          "A personal website to showcase my knowledge. Built with ReactJS, HTML, and CSS.",
+        techStack: "ReactJS, HTML & CSS",
+        link: "https://github.com/kedarvyas/Drum-Kit-JS",
+        open: "https://kedarvyas.github.io/Drum-Kit-JS/"
+      },
       "JavaScript Drum Kit": {
         desc:
           "A mini-project where I implemented a few functions using JavaScript (alongside HTML and CSS for webpage styling) to create a simple drumkit.",

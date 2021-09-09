@@ -22,6 +22,7 @@ class Intro extends React.Component {
       activeKey: eventKey
     });
   }
+
   render() {
     return (
       <div id="intro">
@@ -59,9 +60,8 @@ class Intro extends React.Component {
             href="mailto:kvyas1@vols.utk.edu"
             className="intro-contact"
           >
-           <EmailRoundedIcon></EmailRoundedIcon> 
-            
-            {"  " + "get in touch."}
+            <EmailRoundedIcon></EmailRoundedIcon>
+            {"  " + "say hello."}
           </a>
         </FadeInSection>
       </div>

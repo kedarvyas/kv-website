@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/About.css";
 import FadeInSection from "./FadeInSection";
+import image from "./assets/me.jpg";
 
 class About extends React.Component {
   constructor() {
@@ -25,7 +26,7 @@ class About extends React.Component {
     );
     const two = (
       <p>
-        I'm into <b>frontend development</b>, <b>ui/ux design</b> and{" "}
+        My interests include <b>software engineering</b>, <b>frontend development</b>, <b>ui/ux</b>, and{" "}
         <b>web design</b>. In my free time, my interests include sports, tech, music, and playing video games.
       </p>
     );
@@ -52,7 +53,7 @@ class About extends React.Component {
     ];
 
     const tech_items = tech_stack.map(stack => <li>{stack}</li>);
-    var image = require("/Users/kedarvyas/PersonalWebsite/kv-website/src/components/assets/me.jpg");
+    //var image = require("./assets/me.jpg");
 
     return (
       <div id="about">
@@ -63,7 +64,7 @@ class About extends React.Component {
           <div className="about-content">
             <div className="about-description">
               {desc_items}
-              {"Here are some technologies I have been working with:"}
+              {"programming skills and operating systems:"}
               <ul className="tech-stack">
                 {tech_stack.map(function (tech_item, i) {
                   return (
