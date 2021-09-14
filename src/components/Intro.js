@@ -56,14 +56,14 @@ class Intro extends React.Component {
             />
           </div>
           <div className="intro-desc">i code sometimes</div>
-          <a
+        </FadeInSection>
+        <a
             href="mailto:kvyas1@vols.utk.edu"
             className="intro-contact"
           >
             <EmailRoundedIcon></EmailRoundedIcon>
-            {"  " + "say hello."}
+            {" " + " "}
           </a>
-        </FadeInSection>
       </div>
     );
   }

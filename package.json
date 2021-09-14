@@ -1,4 +1,5 @@
 {
+  "homepage": "https://kedarvyas.com",
   "name": "kv-website",
   "version": "0.1.0",
   "private": true,
@@ -22,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +45,5 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"
-  },
-  "homepage": "https://kedarvyas.github.io/kv-website"
+  }
 }

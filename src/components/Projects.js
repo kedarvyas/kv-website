@@ -25,8 +25,8 @@ class Projects extends React.Component {
         desc:
           "A personal website to showcase my knowledge. Built with ReactJS, HTML, and CSS.",
         techStack: "ReactJS, HTML & CSS",
-        link: "https://github.com/kedarvyas/Drum-Kit-JS",
-        open: "https://kedarvyas.github.io/Drum-Kit-JS/"
+        link: "https://github.com/kedarvyas/kv-website",
+        open: "kedarvyas.com"
       },
       "JavaScript Drum Kit": {
         desc:

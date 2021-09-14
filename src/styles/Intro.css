@@ -65,6 +65,7 @@ canvas {
   cursor: pointer;
   border: 2.5px solid var(--purple);
   border-radius: 5px;
+  display: flex;
 }
 
 .intro-contact:hover {
