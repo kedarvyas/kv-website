@@ -2,7 +2,7 @@
   <img src="public/favicon.ico"/>
 </p>
 <h1 align="center">
-  kedarvyas.com - Version: 1.0.0
+  kedarvyas.com - v: 1.0.0
 </h1>
 
 ![image](https://user-images.githubusercontent.com/42788343/133179379-87fec594-51f4-4c06-8ac5-cbed34395ad7.png)
