@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="public/favicon.ico"/>
+</p>
 <h1 align="center">
   kedarvyas.com - Version: 1.0.0
 </h1>
