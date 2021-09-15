@@ -5,7 +5,7 @@
   position: fixed;
   right: 0;
   padding-right: 5%;
-  bottom: 10%;
+  bottom: 55%;
   background-color: transparent;
 }
 
@@ -20,7 +20,7 @@
   font-family: "NTR", sans-serif;
   letter-spacing: 0em;
   line-height: 1.6em;
-  font-size: 17px;
+  font-size: 23px;
   padding: 0.2em;
   font-weight: bold;
 }
@@ -36,7 +36,7 @@ a:hover {
 
 .sidebar-logos {
   padding-top: 42px;
-  width: 70px;
+  width: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

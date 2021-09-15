@@ -26,7 +26,7 @@ class Intro extends React.Component {
   render() {
     return (
       <div id="intro">
-        <Typist avgTypingDelay={120}>
+        <Typist avgTypingDelay={50}>
           <span className="intro-title">
             {"hello, "}
             <span className="intro-name">{"kedar"}</span>
@@ -42,10 +42,6 @@ class Intro extends React.Component {
               steps={[
                 'developer.',
                 1500,
-                'problem solver.',
-                750,
-                'fast learner.',
-                750,
                 'tech enthusiast.',
                 750,
                 'sports fanatic.',
