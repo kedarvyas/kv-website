@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/About.css";
 import FadeInSection from "./FadeInSection";
-import image from "./assets/me.jpg";
+import image from "./assets/newme.jpg";
 
 class About extends React.Component {
   constructor() {
