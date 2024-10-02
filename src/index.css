@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(107, 114, 128, 0.3);
+  border-radius: 50%;
+  animation: float 10s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-30px) translateX(20px);
+  }
+  50% {
+    transform: translateY(-60px) translateX(-20px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(40px);
+  }
+}
