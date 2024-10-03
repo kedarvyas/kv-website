@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Box, Text, Link, VStack, Flex, Image } from '@chakra-ui/react';
 import Typed from 'typed.js';
 import About from './About';
-import FeaturedWork from './FeaturedWork';
+// import FeaturedWork from './FeaturedWork';
 import NetworkAnimation from './NetworkAnimation';
 
 const MainContent = () => {
