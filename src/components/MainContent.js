@@ -74,7 +74,7 @@ const MainContent = () => {
               bg="gray.200"
               borderRadius="md"
               position="absolute"
-              right="-175px"
+              right="-200px"
               top="100"
             >
               {/* Image placeholder */}
@@ -89,7 +89,7 @@ const MainContent = () => {
             </Box>
           </Flex>
 
-          <FeaturedWork />
+            {/*  <FeaturedWork /> */}
         </VStack>
       </Box>
     </Box>

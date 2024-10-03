@@ -90,7 +90,7 @@ const NetworkAnimation = () => {
       style={{
         position: 'absolute',
         top: 150,
-        right: 150,
+        right: 125,
         width: '20%',
         height: '16%',
       }}
