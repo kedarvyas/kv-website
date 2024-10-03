@@ -46,11 +46,11 @@ const MainContent = () => {
         <VStack spacing={40} alignItems="flex-start" width="100%">
           <Box width="65%">
             <Box height="60px" mb={6}> {/* Increased height for larger text */}
-              <Text 
-                as="h1" 
-                fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }} 
-                fontWeight="extrabold" 
-                lineHeight="2.2" 
+              <Text
+                as="h1"
+                fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+                fontWeight="extrabold"
+                lineHeight="2.2"
                 display="inline"
               >
                 <span ref={el}></span>
@@ -69,27 +69,36 @@ const MainContent = () => {
               <About />
             </Box>
             <Box
-              width="250px"
-              height="250px"
-              bg="gray.200"
-              borderRadius="md"
+              width="256px"
+              height="256px"
               position="absolute"
               right="-200px"
               top="100"
+              borderRadius="md"
+              background="linear-gradient(180deg, rgb(220, 20, 60), rgb(0, 0, 0))"
             >
-              {/* Image placeholder */}
-              <Image
-                src="/path/to/your/image.jpg"
-                alt="Your Name"
-                objectFit="cover"
-                width="100%"
-                height="100%"
-                fallback={<Box width="100%" height="100%" bg="gray.200" />}
-              />
+              <Box
+                position="absolute"
+                top="4px"
+                left="4px"
+                right="4px"
+                bottom="4px"
+                borderRadius="md"
+                overflow="hidden"
+              >
+                <Image
+                  src="/image.jpg"
+                  alt="Your Name"
+                  objectFit="cover"
+                  width="100%"
+                  height="100%"
+                  fallback={<Box width="100%" height="100%" bg="gray.200" />}
+                />
+              </Box>
             </Box>
           </Flex>
 
-            {/*  <FeaturedWork /> */}
+          {/*  <FeaturedWork /> */}
         </VStack>
       </Box>
     </Box>
