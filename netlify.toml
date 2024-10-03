@@ -1,9 +1,8 @@
-toml
-   [build]
-     command = "npm run build"
-     publish = "build"
+[build]
+  command = "npm run build"
+  publish = "build"
 
-   [[redirects]]
-     from = "/*"
-     to = "/index.html"
-     status = 200
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
