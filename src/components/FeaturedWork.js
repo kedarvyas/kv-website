@@ -13,7 +13,7 @@ const FeaturedWork = () => {
       description: 'Short description of Project 2',
       imageUrl: '/path/to/project2-image.jpg',
     },
-    // Add more projects as needed
+
   ];
 
   return (

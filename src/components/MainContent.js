@@ -72,7 +72,7 @@ const MainContent = () => {
               width="256px"
               height="256px"
               position="absolute"
-              right="-200px"
+              right="-210px"
               top="100"
               borderRadius="md"
               background="linear-gradient(180deg, rgb(220, 20, 60), rgb(0, 0, 0))"

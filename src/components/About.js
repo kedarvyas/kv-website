@@ -17,7 +17,7 @@ const HighlightGray = ({ children }) => (
 const About = () => {
   const technologies = [
     "Python", "Java", "React.js", "C++",
-    "TypeScript+", "HTML & CSS", // Add or remove technologies as needed
+    "TypeScript", "HTML & CSS", 
   ];
 
   return (

@@ -3,17 +3,20 @@ import { Box, Flex, Text, Link, Button } from '@chakra-ui/react';
 
 const Header = () => {
   const handleHireMe = () => {
-    window.location.href = "mailto:your.email@example.com";
+    window.location.href = "mailto:kedar.m.vyas@gmail.com";
   };
 
   return (
     <Box
       as="header"
-      position="sticky"
+      position="fixed"
       top={0}
+      left={0}
+      right={0}
       zIndex={10}
       bg="white"
       borderBottom="1px solid black"
+      boxShadow="0 1px 2px rgba(0,0,0,0.1)"
     >
       <Flex
         justifyContent="space-between"
