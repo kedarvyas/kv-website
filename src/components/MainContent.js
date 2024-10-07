@@ -59,8 +59,8 @@ const MainContent = () => {
             <Text fontSize="md" mb={6}>
               I am a software engineer from Nashville, Tennessee. I enjoy learning, building, and exploring new technologies. Currently at L3Harris Technologies. University of Tennessee alumnus.
             </Text>
-            <Link href="mailto:your.email@example.com" color="rgb(220, 20, 60)" fontSize="sm">
-              kedar.m.vyas@example.com
+            <Link href="mailto:kedar.m.vyas@gmail.com" color="rgb(220, 20, 60)" fontSize="sm">
+              kedar.m.vyas@gmail.com
             </Link>
           </Box>
 
