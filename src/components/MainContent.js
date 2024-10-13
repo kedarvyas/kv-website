@@ -3,8 +3,6 @@ import { Box, Text, Link, VStack, Image, Flex, useMediaQuery } from '@chakra-ui/
 import About from './About';
 import NetworkAnimation from './NetworkAnimation';
 
-// {{ base: "25", md: "125" }} 
-
 const MainContent = () => {
   const [isMobile] = useMediaQuery("(max-width: 48em)");
   const [typedText, setTypedText] = useState('');
