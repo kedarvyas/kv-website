@@ -1,106 +1,135 @@
-import React, { useRef, useEffect } from 'react';
-import { Box, Text, Link, VStack, Flex, Image } from '@chakra-ui/react';
-import Typed from 'typed.js';
+import React, { useState, useEffect } from 'react';
+import { Box, Text, Link, VStack, Image, Flex, useMediaQuery } from '@chakra-ui/react';
 import About from './About';
-// import FeaturedWork from './FeaturedWork';
 import NetworkAnimation from './NetworkAnimation';
 
+// {{ base: "25", md: "125" }} 
+
 const MainContent = () => {
-  const topSpacing = { base: "32", md: "40", lg: "48" };
-  const animationSize = "280px";
-  const el = useRef(null);
+  const [isMobile] = useMediaQuery("(max-width: 48em)");
+  const [typedText, setTypedText] = useState('');
+  const fullText = "Hey, I'm Kedar...";
 
   useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: ["Hey, I'm Kedar..."],
-      typeSpeed: 60,
-      startDelay: 1000,
-      showCursor: true,
-      cursorChar: '|',
-      stopped: false,
-      onComplete: (self) => {
-        if (self.cursor) {
-          self.cursor.style.display = 'inline-block';
+    let index = 0;
+    const intervalId = setInterval(() => {
+      setTypedText((prev) => {
+        if (index < fullText.length) {
+          index++;
+          return fullText.slice(0, index);
         }
-      }
-    });
+        clearInterval(intervalId);
+        return prev;
+      });
+    }, 200);
 
-    // Destroying the instance on unmount to prevent memory leaks
-    return () => {
-      typed.destroy();
-    };
+    return () => clearInterval(intervalId);
   }, []);
 
-  return (
-    <Box as="main" pt={topSpacing} pb={32}>
-      <Box maxWidth="1600px" margin="0 auto" position="relative">
-        <Box
-          position="absolute"
-          top={topSpacing}
-          right="0"
-          height={animationSize}
-          pointerEvents="none"
-        >
-          <NetworkAnimation />
-        </Box>
-        <VStack spacing={40} alignItems="flex-start" width="100%">
-          <Box width="65%">
-            <Box height="60px" mb={6}> {/* Increased height for larger text */}
-              <Text
-                as="h1"
-                fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
-                fontWeight="extrabold"
-                lineHeight="2.2"
-                display="inline"
-              >
-                <span ref={el}></span>
-              </Text>
-            </Box>
-            <Text fontSize="md" mb={6}>
-              I am a software engineer from Nashville, Tennessee. I enjoy learning, building, and exploring new technologies. Currently at L3Harris Technologies. University of Tennessee alumnus.
-            </Text>
-            <Link href="mailto:kedar.m.vyas@gmail.com" color="rgb(220, 20, 60)" fontSize="sm">
-              kedar.m.vyas@gmail.com
-            </Link>
-          </Box>
-
-          <Flex width="100%" position="relative" mb={16}>
-            <Box width="100%">
-              <About />
-            </Box>
-            <Box
-              width="256px"
-              height="256px"
-              position="absolute"
-              right="-210px"
-              top="100"
-              borderRadius="md"
-              background="linear-gradient(180deg, rgb(220, 20, 60), rgb(0, 0, 0))"
-            >
-              <Box
-                position="absolute"
-                top="4px"
-                left="4px"
-                right="4px"
-                bottom="4px"
-                borderRadius="md"
-                overflow="hidden"
-              >
-                <Image
-                  src="/image.jpg"
-                  alt="Your Name"
-                  objectFit="cover"
-                  width="100%"
-                  height="100%"
-                  fallback={<Box width="100%" height="100%" bg="gray.200" />}
-                />
-              </Box>
-            </Box>
-          </Flex>
-
-          {/*  <FeaturedWork /> */}
-        </VStack>
+  const PhotoComponent = () => (
+    <Box
+      width="100%"
+      maxWidth="256px"
+      height="256px"
+      position="relative"
+      right={{ base: "-50px", md: "100px" }} 
+      top={{ base: "25", md: "100px" }} 
+      borderRadius="md"
+      background="linear-gradient(180deg, rgb(220, 20, 60), rgb(0, 0, 0))"
+      p="4px"
+    >
+      <Box
+        position="absolute"
+        top="4px"
+        left="4px"
+        right="4px"
+        bottom="4px"
+        borderRadius="md"
+        overflow="hidden"
+      >
+        <Image
+          src="/image.jpg"
+          alt="Kedar Vyas"
+          objectFit="cover"
+          width="100%"
+          height="100%"
+          fallback={<Box width="100%" height="100%" bg="gray.200" />}
+        />
       </Box>
+    </Box>
+  );
+
+  const MainContentText = () => (
+    <Box width={{ base: "100%", md: "70%" }} position="relative">
+      <Box height={{ base: "50px", md: "75px" }} mb={4}>
+        <Text
+          as="h1"
+          fontSize={{ base: "2xl", md: "4xl" }}
+          fontWeight="extrabold"
+          lineHeight="2.2"
+        >
+          {typedText}
+          <span style={{ opacity: 1, animation: 'blink 0.7s infinite' }}>|</span>
+        </Text>
+      </Box>
+      <Text fontSize={{ base: "sm", md: "md" }} mb={4}>
+        I am a software engineer from Nashville, Tennessee. I enjoy learning, building, and exploring new technologies. Currently at L3Harris Technologies. University of Tennessee alumnus.
+      </Text>
+      <Link href="mailto:kedar.m.vyas@gmail.com" color="rgb(220, 20, 60)" fontSize={{ base: "xs", md: "sm" }}>
+        kedar.m.vyas@gmail.com
+      </Link>
+    </Box>
+  );
+
+  return (
+    <Box 
+      maxWidth="1200px" 
+      margin="0 auto" 
+      px={{ base: 4, md: 12 }} 
+      py={{ base: 32, md: 48 }}
+    >
+      {isMobile ? (
+        <VStack spacing={16} alignItems="flex-start" width="100%">
+          <Box 
+          width="256px" 
+          height="256px"
+          position="relative"
+          left="50px"
+          >
+            <NetworkAnimation />
+          </Box>
+          <MainContentText />
+          <PhotoComponent />
+          <Box mt={8}>
+            <About />
+          </Box>
+        </VStack>
+      ) : (
+        <Flex direction="row" width="100%">
+          <VStack spacing={48} alignItems="flex-start" width="60%">
+            <MainContentText />
+            <About />
+          </VStack>
+          <Flex 
+            direction="column" 
+            width="40%" 
+            mt={-6}
+            alignItems="flex-end"
+            position="relative"
+          >
+            <Box 
+              width="256px" 
+              height="256px" 
+              mb={32}
+              position="relative"
+              right="75px"
+            >
+              <NetworkAnimation />
+            </Box>
+            <PhotoComponent />
+          </Flex>
+        </Flex>
+      )}
     </Box>
   );
 };

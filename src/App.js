@@ -1,9 +1,8 @@
 import React from 'react';
-import { ChakraProvider, Box, Flex } from '@chakra-ui/react';
+import { ChakraProvider, Box } from '@chakra-ui/react';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import FractalParticleBackground from './components/FractalParticleBackground';
-import NetworkAnimation from './components/NetworkAnimation';
 
 function App() {
   return (
@@ -28,8 +27,9 @@ function App() {
         <FractalParticleBackground />
         <Header />
         <Box
-          pt="60px" 
-          height="100vh"
+          as="main"
+          pt="60px"
+          height="calc(100vh - 60px)"
           overflowY="auto"
           css={{
             '&': {
@@ -38,12 +38,7 @@ function App() {
             },
           }}
         >
-          <Flex maxWidth="1100px" margin="0 auto" position="relative">
-            <Box flex="1" pr="320px"> 
-              <MainContent />
-            </Box>
-            <NetworkAnimation />
-          </Flex>
+          <MainContent />
         </Box>
       </Box>
     </ChakraProvider>

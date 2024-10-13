@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { Box, useMediaQuery } from '@chakra-ui/react';
 
 const NetworkAnimation = () => {
   const canvasRef = useRef(null);
+  const [isMobile] = useMediaQuery("(max-width: 48em)");
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -13,13 +15,11 @@ const NetworkAnimation = () => {
       canvas.height = canvas.offsetHeight;
     };
 
-    console.log('Canvas size:', canvas.offsetWidth, canvas.offsetHeight);
-
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
     const nodes = [];
-    const numNodes = 20;
+    const numNodes = isMobile ? 10 : 20;
 
     class Node {
       constructor() {
@@ -82,20 +82,24 @@ const NetworkAnimation = () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: 'absolute',
-        top: 150,
-        right: 125,
-        width: '20%',
-        height: '16%',
-      }}
-    />
+    <Box width="100%" height="100%" position="relative">
+      <canvas
+        ref={canvasRef}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+        }}
+      />
+    </Box>
   );
 };
 
 export default NetworkAnimation;
+
+
