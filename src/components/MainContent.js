@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Text, Link, VStack, Image, Flex, useMediaQuery } from '@chakra-ui/react';
 import About from './About';
 import NetworkAnimation from './NetworkAnimation';
+import FeaturedWork from './FeaturedWork';
 
 const MainContent = () => {
   const [isMobile] = useMediaQuery("(max-width: 48em)");
@@ -89,44 +90,52 @@ const MainContent = () => {
       {isMobile ? (
         <VStack spacing={16} alignItems="flex-start" width="100%">
           <Box 
-          width="256px" 
-          height="256px"
-          position="relative"
-          left="50px"
+            width="256px" 
+            height="256px"
+            position="relative"
+            left="50px"
           >
             <NetworkAnimation />
           </Box>
           <MainContentText />
           <PhotoComponent />
-          <Box mt={8}>
+          <Box mt={8} width="100%">
             <About />
+          </Box>
+          <Box width="100%">
+            <FeaturedWork />
           </Box>
         </VStack>
       ) : (
-        <Flex direction="row" width="100%">
-          <VStack spacing={48} alignItems="flex-start" width="60%">
-            <MainContentText />
-            <About />
-          </VStack>
-          <Flex 
-            direction="column" 
-            width="40%" 
-            mt={-6}
-            alignItems="flex-end"
-            position="relative"
-          >
-            <Box 
-              width="256px" 
-              height="256px" 
-              mb={32}
+        <>
+          <Flex direction="row" width="100%">
+            <VStack spacing={48} alignItems="flex-start" width="60%">
+              <MainContentText />
+              <About />
+            </VStack>
+            <Flex 
+              direction="column" 
+              width="40%" 
+              mt={-6}
+              alignItems="flex-end"
               position="relative"
-              right="75px"
             >
-              <NetworkAnimation />
-            </Box>
-            <PhotoComponent />
+              <Box 
+                width="256px" 
+                height="256px" 
+                mb={32}
+                position="relative"
+                right="75px"
+              >
+                <NetworkAnimation />
+              </Box>
+              <PhotoComponent />
+            </Flex>
           </Flex>
-        </Flex>
+          <Box mt={24} width="100%">
+            <FeaturedWork />
+          </Box>
+        </>
       )}
     </Box>
   );

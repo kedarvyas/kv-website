@@ -1,35 +1,35 @@
 import React from 'react';
-import { Box, Heading, SimpleGrid, Image, Text, VStack } from '@chakra-ui/react';
+import { Box, Heading, SimpleGrid } from '@chakra-ui/react';
+import ProjectCard from './ProjectCard';
 
 const FeaturedWork = () => {
   const projects = [
     {
-      title: 'Project 1',
-      description: 'Short description of Project 1',
-      imageUrl: '/path/to/project1-image.jpg',
+      title: 'FPL League Hub',
+      description: 'Hub for Head-to-Head Leagues on Fantasy Premier League. Provides comprehensive statistics and analysis for fantasy football managers.',
+      imageUrl: '/api/placeholder/800/600', // Using placeholder for now
+      type: 'Web Application',
+      technologies: ['React', 'Node.js', 'Python', 'FastAPI'],
+      projectUrl: '#'
     },
     {
       title: 'Project 2',
       description: 'Short description of Project 2',
-      imageUrl: '/path/to/project2-image.jpg',
+      imageUrl: '/api/placeholder/800/600', // Using placeholder for now
+      type: 'Mobile App',
+      technologies: ['React Native', 'Firebase'],
+      projectUrl: '#'
     },
-
   ];
 
   return (
-    <Box as="section" py={2}>
+    <Box as="section" py={8} px={4} maxWidth="1200px" mx="auto">
       <Heading as="h2" size="lg" mb={8}>
         projects.
       </Heading>
       <SimpleGrid columns={[1, null, 2]} spacing={8}>
         {projects.map((project, index) => (
-          <Box key={index} borderWidth={1} borderRadius="lg" overflow="hidden">
-            <Image src={project.imageUrl} alt={project.title} />
-            <VStack p={4} alignItems="flex-start">
-              <Heading as="h3" size="md">{project.title}</Heading>
-              <Text>{project.description}</Text>
-            </VStack>
-          </Box>
+          <ProjectCard key={index} project={project} />
         ))}
       </SimpleGrid>
     </Box>
