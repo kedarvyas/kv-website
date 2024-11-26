@@ -7,18 +7,18 @@ const FeaturedWork = () => {
     {
       title: 'FPL League Hub',
       description: 'Hub for Head-to-Head Leagues on Fantasy Premier League. Provides comprehensive statistics and analysis for fantasy football managers.',
-      imageUrl: '/api/placeholder/800/600', // Using placeholder for now
+      imageUrl: '/fpl-league-hub.jpg', 
       type: 'Web Application',
       technologies: ['React', 'Node.js', 'Python', 'FastAPI'],
-      projectUrl: '#'
+      projectUrl: 'https://fpl-tacticos-leaguehub.netlify.app/'
     },
     {
       title: 'Project 2',
       description: 'Short description of Project 2',
-      imageUrl: '/api/placeholder/800/600', // Using placeholder for now
+      imageUrl: '/website-image.jpg',
       type: 'Mobile App',
       technologies: ['React Native', 'Firebase'],
-      projectUrl: '#'
+      projectUrl: 'https://github.com/kedarvyas/kv-website'
     },
   ];
 
