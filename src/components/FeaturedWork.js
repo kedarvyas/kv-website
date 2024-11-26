@@ -7,17 +7,17 @@ const FeaturedWork = () => {
     {
       title: 'FPL League Hub',
       description: 'Hub for Head-to-Head Leagues on Fantasy Premier League. Provides comprehensive statistics and analysis for fantasy football managers.',
-      imageUrl: '/fpl-league-hub.jpg', 
+      imageUrl: '/fpl-league-hub.jpg',
       type: 'Web Application',
       technologies: ['React', 'Node.js', 'Python', 'FastAPI'],
       projectUrl: 'https://fpl-tacticos-leaguehub.netlify.app/'
     },
     {
-      title: 'Project 2',
-      description: 'Short description of Project 2',
+      title: 'Personal Portfolio',
+      description: 'Modern, responsive portfolio website featuring interactive particle animations, smooth transitions, and dynamic content rendering. Built with React and Chakra UI for a seamless user experience across all devices.',
       imageUrl: '/website-image.jpg',
-      type: 'Mobile App',
-      technologies: ['React Native', 'Firebase'],
+      type: 'Webpage',
+      technologies: ['React', 'Chakra UI', 'Three.js'],
       projectUrl: 'https://github.com/kedarvyas/kv-website'
     },
   ];

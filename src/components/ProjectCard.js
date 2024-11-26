@@ -2,8 +2,8 @@ import React from 'react';
 import { Box, Heading, Text, VStack, HStack, Tag, Link, Image } from '@chakra-ui/react';
 
 const ProjectCard = ({ project }) => {
-  const { title, description, type, technologies, projectUrl } = project;
-  
+  const { title, description, type, technologies, projectUrl, imageUrl } = project;  // Added imageUrl
+
   return (
     <Box
       role="group"
@@ -18,13 +18,14 @@ const ProjectCard = ({ project }) => {
       {/* Project Image Container */}
       <Box position="relative" h="64" overflow="hidden">
         <Image
-          src="/api/placeholder/800/600"
+          src={imageUrl}
           alt={title}
           width="100%"
           height="100%"
           objectFit="cover"
           transition="transform 0.3s"
           _groupHover={{ transform: 'scale(1.05)' }}
+          fallback={<Box width="100%" height="100%" bg="gray.200" />}  // Added fallback
         />
         <Box
           position="absolute"
@@ -46,7 +47,13 @@ const ProjectCard = ({ project }) => {
           <Tag size="md" variant="subtle" colorScheme="gray">
             {type}
           </Tag>
-          <Link href={projectUrl} color="gray.500" fontSize="sm" _hover={{ color: "gray.700" }}>
+          <Link
+            href={projectUrl}
+            color="gray.500"
+            fontSize="sm"
+            _hover={{ color: "gray.700" }}
+            isExternal  
+          >
             View Project →
           </Link>
         </HStack>
