@@ -2,6 +2,7 @@ import React from 'react';
 import { ChakraProvider, Box } from '@chakra-ui/react';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
+import Footer from './components/Footer';
 import FractalParticleBackground from './components/FractalParticleBackground';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           }}
         >
           <MainContent />
+          <Footer />
         </Box>
       </Box>
     </ChakraProvider>

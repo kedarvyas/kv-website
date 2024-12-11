@@ -20,6 +20,14 @@ const FeaturedWork = () => {
       technologies: ['React', 'Chakra UI', 'Three.js'],
       projectUrl: 'https://github.com/kedarvyas/kv-website'
     },
+    {
+      title: 'Habit Tracker',
+      description: 'Simple, responsive habit tracker scaled for web and mobile.',
+      imageUrl: '/habits-tracker.jpg',
+      type: 'Webpage',
+      technologies: ['React', 'Shadcn/UI'],
+      projectUrl: 'https://habitstrackerkv.netlify.app/'
+    },
   ];
 
   return (
