@@ -28,6 +28,14 @@ const FeaturedWork = () => {
       technologies: ['React', 'Shadcn/UI'],
       projectUrl: 'https://habitstrackerkv.netlify.app/'
     },
+    {
+      title: 'Fractal Generator',
+      description: 'React and WebGL application that runs various fractals in real-time',
+      imageUrl: '/fractal-generator.jpg',
+      type: 'React App',
+      technologies: ['React', 'WebGL', 'Shadcn/UI'],
+      projectUrl: 'https://github.com/kedarvyas/FractalGenerator'
+    },
   ];
 
   return (
