@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, useColorMode } from '@chakra-ui/react';
 
 const Footer = () => {
+  const { colorMode } = useColorMode();
   return (
     <Box
       as="footer"
@@ -9,12 +10,13 @@ const Footer = () => {
       py={4}
       textAlign="center"
       borderTop="1px solid"
-      borderColor="gray.100"
+      borderColor={colorMode === 'dark' ? 'gray.700' : 'gray.100'}
+      bg={colorMode === 'dark' ? 'gray.900' : 'white'}
     >
       <Text
         fontSize="sm"
         fontFamily="mono"
-        color="gray.600"
+        color={colorMode === 'dark' ? 'gray.400' : 'gray.600'}
         letterSpacing="wide"
       >
         built on earth by a human

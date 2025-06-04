@@ -1,12 +1,15 @@
 import React from 'react';
-import { Box, Heading, Text, SimpleGrid, Flex, Icon, useMediaQuery } from '@chakra-ui/react';
+import { Box, Heading, Text, SimpleGrid, Flex, Icon, useMediaQuery, useColorMode } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 
-const HighlightRed = ({ children }) => (
-  <Text as="span" color="rgb(220, 20, 60)" fontWeight="bold" display="inline">
-    {children}
-  </Text>
-);
+const HighlightRed = ({ children }) => {
+  const { colorMode } = useColorMode();
+  return (
+    <Text as="span" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} fontWeight="bold" display="inline">
+      {children}
+    </Text>
+  );
+};
 
 const HighlightGray = ({ children }) => (
   <Text as="span" color="gray.700" fontWeight="bold" display="inline">
@@ -16,6 +19,7 @@ const HighlightGray = ({ children }) => (
 
 const About = () => {
   const [isMobile] = useMediaQuery("(max-width: 48em)");
+  const { colorMode } = useColorMode();
 
   const technologies = [
     "Python", "Java", "React.js", "C++",
@@ -29,9 +33,9 @@ const About = () => {
       </Heading>
       <Box>
         <Text fontSize={{ base: "sm", md: "md" }} mb={{ base: 4, md: 6 }}>
-          I am a passionate <HighlightGray>Software Engineer</HighlightGray> with 2 years of experience.
-          Currently at <HighlightRed>L3Harris Technologies</HighlightRed> working on the <HighlightRed>Upgraded Early Warnings Radars (UEWR)</HighlightRed> team for the <HighlightGray>U.S. Space Force's GMASS</HighlightGray> contract.
-          Previously on <HighlightRed>GBOSS</HighlightRed> for the <HighlightGray>USSF's MOSSAIC</HighlightGray> program.
+          I am a passionate <HighlightGray>Software Engineer</HighlightGray> with 3 years of experience.
+          Currently at <HighlightRed>L3Harris Technologies</HighlightRed> working on the <HighlightRed>Advanced Tracking and Launch Analysis System (ATLAS)</HighlightRed> team for the <HighlightGray>Space Command and Control (Space C2)</HighlightGray> effort.
+          Previously on the <HighlightGray>USSF's </HighlightGray><HighlightRed>GMASS</HighlightRed> and <HighlightRed>MOSSAIC</HighlightRed> programs.
         </Text>
 
         <Heading as="h3" size={{ base: "sm", md: "md" }} mb={{ base: 3, md: 4 }}>
@@ -42,7 +46,7 @@ const About = () => {
             <Flex key={index} alignItems="center">
               <Icon
                 as={ChevronRightIcon}
-                color="rgb(220, 20, 60)"
+                color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'}
                 w={{ base: 4, md: 5 }}
                 h={{ base: 4, md: 5 }}
                 mr={2}

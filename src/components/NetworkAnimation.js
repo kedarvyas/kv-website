@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import { Box, useMediaQuery } from '@chakra-ui/react';
+import { Box, useMediaQuery, useColorMode } from '@chakra-ui/react';
 
 const NetworkAnimation = () => {
   const canvasRef = useRef(null);
   const [isMobile] = useMediaQuery("(max-width: 48em)");
+  const { colorMode } = useColorMode();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -39,7 +40,7 @@ const NetworkAnimation = () => {
       }
 
       draw() {
-        ctx.fillStyle = 'rgba(220, 20, 60, 0.7)';
+        ctx.fillStyle = colorMode === 'dark' ? '#BB86FC' : 'rgba(220, 20, 60, 0.7)';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -63,7 +64,9 @@ const NetworkAnimation = () => {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 100) {
-            ctx.strokeStyle = `rgba(0, 0, 0, ${1 - distance / 100})`;
+            ctx.strokeStyle = colorMode === 'dark'
+              ? `rgba(255,255,255,${1 - distance / 100})`
+              : `rgba(0, 0, 0, ${1 - distance / 100})`;
             ctx.lineWidth = 1.5;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -82,7 +85,7 @@ const NetworkAnimation = () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, [isMobile]);
+  }, [isMobile, colorMode]);
 
   return (
     <Box width="100%" height="100%" position="relative">

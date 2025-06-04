@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Box, Flex, Text, Link, IconButton, VStack, Drawer, DrawerBody, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, useMediaQuery } from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
+import { Box, Flex, Text, Link, IconButton, VStack, Drawer, DrawerBody, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, useMediaQuery, useColorMode } from '@chakra-ui/react';
+import { HamburgerIcon, MoonIcon } from '@chakra-ui/icons';
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isMobile] = useMediaQuery("(max-width: 48em)");
   const [btnRef] = useState(React.useRef());
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const handleHireMe = () => {
     window.location.href = "mailto:kedar.m.vyas@gmail.com";
@@ -41,7 +42,7 @@ const Header = () => {
           flexDirection="column"
           alignItems="center"
         >
-          <GithubIcon size="48px" color="rgb(220, 20, 60)" />
+          <GithubIcon size="48px" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} />
           <Text mt={2} fontSize="lg" fontWeight="bold">GitHub</Text>
         </Link>
         <Link 
@@ -53,7 +54,7 @@ const Header = () => {
           flexDirection="column"
           alignItems="center"
         >
-          <LinkedInIcon size="48px" color="rgb(220, 20, 60)" />
+          <LinkedInIcon size="48px" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} />
           <Text mt={2} fontSize="lg" fontWeight="bold">LinkedIn</Text>
         </Link>
         <Box 
@@ -66,9 +67,17 @@ const Header = () => {
           flexDirection="column"
           alignItems="center"
         >
-          <EmailIcon size="48px" color="rgb(220, 20, 60)" />
+          <EmailIcon size="48px" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} />
           <Text mt={2} fontSize="lg" fontWeight="bold">Contact</Text>
         </Box>
+        <IconButton
+          aria-label="Toggle dark mode"
+          icon={<MoonIcon />}
+          onClick={toggleColorMode}
+          variant="ghost"
+          fontSize="32px"
+          mt={4}
+        />
       </VStack>
     ) : (
       <Flex alignItems="center" gap={4}>
@@ -77,14 +86,14 @@ const Header = () => {
           target="_blank" 
           rel="noopener noreferrer"
         >
-          <GithubIcon size="24px" color="rgb(220, 20, 60)" />
+          <GithubIcon size="24px" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} />
         </Link>
         <Link 
           href="https://www.linkedin.com/in/kedarvyas/" 
           target="_blank" 
           rel="noopener noreferrer"
         >
-          <LinkedInIcon size="24px" color="rgb(220, 20, 60)" />
+          <LinkedInIcon size="24px" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} />
         </Link>
         <Box
           as="button"
@@ -95,15 +104,23 @@ const Header = () => {
           width="24px"
           height="24px"
           borderRadius="50%"
-          bg="rgb(220, 20, 60)"
+          bg={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'}
           transition="all 0.2s"
           _hover={{
-            bg: "white",
-            boxShadow: "0 0 0 1px rgb(220, 20, 60)"
+            bg: colorMode === 'dark' ? '#fff' : 'white',
+            boxShadow: colorMode === 'dark' ? '0 0 0 1px #BB86FC' : '0 0 0 1px rgb(220, 20, 60)'
           }}
         >
-          <EmailIcon size="18px" color="white" style={{ transition: "all 0.2s" }} />
+          <EmailIcon size="18px" color={colorMode === 'dark' ? '#121212' : 'white'} style={{ transition: "all 0.2s" }} />
         </Box>
+        <IconButton
+          aria-label="Toggle dark mode"
+          icon={<MoonIcon />}
+          onClick={toggleColorMode}
+          variant="ghost"
+          fontSize="20px"
+          ml={2}
+        />
       </Flex>
     )
   );
@@ -116,23 +133,25 @@ const Header = () => {
       left={0}
       right={0}
       zIndex={10}
-      bg="white"
-      borderBottom="1px solid black"
+      bg={colorMode === 'dark' ? 'gray.900' : 'white'}
+      borderBottom={colorMode === 'dark' ? '1px solid #222' : '1px solid black'}
       boxShadow="0 1px 2px rgba(0,0,0,0.1)"
     >
       <Flex
         justifyContent="space-between"
         alignItems="center"
-        maxWidth="1150px"
+        maxWidth="1200px"
         margin="0 auto"
         py={3.5}
-        px={4}
+        px={{ base: 4, md: 12 }}
       >
         <Text           
           fontSize={{ base: "xl", md: "xl" }} 
           fontWeight={900} 
-          fontFamily="Arial, Helvetica, sans-serif">
-          {isMobile ? "kv" : "kedar vyas"}
+          fontFamily="Arial, Helvetica, sans-serif"
+          textAlign="left"
+        >
+          {isMobile ? "kv" : "kv"}
         </Text>
         {isMobile ? (
           <IconButton
