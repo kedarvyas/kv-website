@@ -46,6 +46,7 @@ const MainContent = () => {
         bottom="4px"
         borderRadius="md"
         overflow="hidden"
+        bg="gray.200" // or a color that matches your theme
       >
         <Image
           src="/image.jpg"
@@ -53,7 +54,7 @@ const MainContent = () => {
           objectFit="cover"
           width="100%"
           height="100%"
-          fallback={<Box width="100%" height="100%" bg="gray.200" />}
+          fallbackSrc="/image.jpg"
         />
       </Box>
     </Box>
