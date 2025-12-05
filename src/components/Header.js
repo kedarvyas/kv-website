@@ -1,12 +1,33 @@
 import React, { useState } from 'react';
 import { Box, Flex, Text, Link, IconButton, VStack, Drawer, DrawerBody, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, useMediaQuery, useColorMode } from '@chakra-ui/react';
-import { HamburgerIcon, MoonIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { useThemeMode } from '../App';
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isMobile] = useMediaQuery("(max-width: 48em)");
   const [btnRef] = useState(React.useRef());
   const { colorMode, toggleColorMode } = useColorMode();
+  const { themeMode, setThemeMode } = useThemeMode();
+
+  const cycleTheme = () => {
+    if (themeMode === 'light') {
+      setThemeMode('dark');
+      if (colorMode === 'light') toggleColorMode();
+    } else if (themeMode === 'dark') {
+      setThemeMode('minimal');
+      if (colorMode === 'dark') toggleColorMode();
+    } else {
+      setThemeMode('light');
+      if (colorMode === 'dark') toggleColorMode();
+    }
+  };
+
+  const getAccentColor = () => {
+    if (themeMode === 'minimal') return '#7a9b76';
+    if (themeMode === 'dark') return '#BB86FC';
+    return 'rgb(220, 20, 60)';
+  };
 
   const handleHireMe = () => {
     window.location.href = "mailto:kedar.m.vyas@gmail.com";
@@ -30,34 +51,47 @@ const Header = () => {
     </svg>
   );
 
+  const MinimalIcon = (props) => (
+    <svg viewBox="0 0 24 24" width={props.size} height={props.size} fill="currentColor" {...props}>
+      <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="2"/>
+      <path d="M12 1v3M12 20v3M1 12h3M20 12h3" stroke="currentColor" strokeWidth="2"/>
+    </svg>
+  );
+
+  const getThemeIcon = () => {
+    if (themeMode === 'light') return <SunIcon />;
+    if (themeMode === 'dark') return <MoonIcon />;
+    return <MinimalIcon />;
+  };
+
   const MenuItems = ({ isMobile }) => (
     isMobile ? (
       <VStack spacing={12} align="center" width="100%">
-        <Link 
-          href="https://github.com/kedarvyas" 
-          target="_blank" 
+        <Link
+          href="https://github.com/kedarvyas"
+          target="_blank"
           rel="noopener noreferrer"
           onClick={onClose}
           display="flex"
           flexDirection="column"
           alignItems="center"
         >
-          <GithubIcon size="48px" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} />
+          <GithubIcon size="48px" color={getAccentColor()} />
           <Text mt={2} fontSize="lg" fontWeight="bold">GitHub</Text>
         </Link>
-        <Link 
-          href="https://www.linkedin.com/in/kedarvyas/" 
-          target="_blank" 
+        <Link
+          href="https://www.linkedin.com/in/kedarvyas/"
+          target="_blank"
           rel="noopener noreferrer"
           onClick={onClose}
           display="flex"
           flexDirection="column"
           alignItems="center"
         >
-          <LinkedInIcon size="48px" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} />
+          <LinkedInIcon size="48px" color={getAccentColor()} />
           <Text mt={2} fontSize="lg" fontWeight="bold">LinkedIn</Text>
         </Link>
-        <Box 
+        <Box
           as="button"
           onClick={() => {
             handleHireMe();
@@ -67,13 +101,13 @@ const Header = () => {
           flexDirection="column"
           alignItems="center"
         >
-          <EmailIcon size="48px" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} />
+          <EmailIcon size="48px" color={getAccentColor()} />
           <Text mt={2} fontSize="lg" fontWeight="bold">Contact</Text>
         </Box>
         <IconButton
-          aria-label="Toggle dark mode"
-          icon={<MoonIcon />}
-          onClick={toggleColorMode}
+          aria-label="Cycle theme mode"
+          icon={getThemeIcon()}
+          onClick={cycleTheme}
           variant="ghost"
           fontSize="32px"
           mt={4}
@@ -81,19 +115,19 @@ const Header = () => {
       </VStack>
     ) : (
       <Flex alignItems="center" gap={4}>
-        <Link 
-          href="https://github.com/kedarvyas" 
-          target="_blank" 
+        <Link
+          href="https://github.com/kedarvyas"
+          target="_blank"
           rel="noopener noreferrer"
         >
-          <GithubIcon size="24px" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} />
+          <GithubIcon size="24px" color={getAccentColor()} />
         </Link>
-        <Link 
-          href="https://www.linkedin.com/in/kedarvyas/" 
-          target="_blank" 
+        <Link
+          href="https://www.linkedin.com/in/kedarvyas/"
+          target="_blank"
           rel="noopener noreferrer"
         >
-          <LinkedInIcon size="24px" color={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'} />
+          <LinkedInIcon size="24px" color={getAccentColor()} />
         </Link>
         <Box
           as="button"
@@ -104,19 +138,19 @@ const Header = () => {
           width="24px"
           height="24px"
           borderRadius="50%"
-          bg={colorMode === 'dark' ? '#BB86FC' : 'rgb(220, 20, 60)'}
+          bg={getAccentColor()}
           transition="all 0.2s"
           _hover={{
-            bg: colorMode === 'dark' ? '#fff' : 'white',
-            boxShadow: colorMode === 'dark' ? '0 0 0 1px #BB86FC' : '0 0 0 1px rgb(220, 20, 60)'
+            bg: themeMode === 'minimal' ? '#5f7a5c' : themeMode === 'dark' ? '#fff' : 'white',
+            boxShadow: `0 0 0 1px ${getAccentColor()}`
           }}
         >
-          <EmailIcon size="18px" color={colorMode === 'dark' ? '#121212' : 'white'} style={{ transition: "all 0.2s" }} />
+          <EmailIcon size="18px" color={themeMode === 'minimal' ? 'white' : themeMode === 'dark' ? '#121212' : 'white'} style={{ transition: "all 0.2s" }} />
         </Box>
         <IconButton
-          aria-label="Toggle dark mode"
-          icon={<MoonIcon />}
-          onClick={toggleColorMode}
+          aria-label="Cycle theme mode"
+          icon={getThemeIcon()}
+          onClick={cycleTheme}
           variant="ghost"
           fontSize="20px"
           ml={2}
@@ -133,8 +167,8 @@ const Header = () => {
       left={0}
       right={0}
       zIndex={10}
-      bg={colorMode === 'dark' ? 'gray.900' : 'white'}
-      borderBottom={colorMode === 'dark' ? '1px solid #222' : '1px solid black'}
+      bg={themeMode === 'minimal' ? '#f5f1ea' : themeMode === 'dark' ? 'gray.900' : 'white'}
+      borderBottom={themeMode === 'minimal' ? '1px solid #d4cfc4' : themeMode === 'dark' ? '1px solid #222' : '1px solid black'}
       boxShadow="0 1px 2px rgba(0,0,0,0.1)"
     >
       <Flex

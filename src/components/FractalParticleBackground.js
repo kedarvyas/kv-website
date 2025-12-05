@@ -1,7 +1,15 @@
 import React, { useEffect, useRef } from 'react';
+import { useThemeMode } from '../App';
 
 const FractalParticleBackground = () => {
   const canvasRef = useRef(null);
+  const { themeMode } = useThemeMode();
+  const themeModeRef = useRef(themeMode);
+
+  // Update ref when theme changes
+  useEffect(() => {
+    themeModeRef.current = themeMode;
+  }, [themeMode]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -19,6 +27,20 @@ const FractalParticleBackground = () => {
     const particlesArray = [];
     const numberOfParticles = 100;
 
+    const getParticleColor = () => {
+      const mode = themeModeRef.current;
+      if (mode === 'minimal') return 'rgba(122, 155, 118, 0.8)';
+      if (mode === 'dark') return 'rgba(187, 134, 252, 0.8)';
+      return 'rgba(220, 20, 60, 0.8)';
+    };
+
+    const getLineColor = (opacity) => {
+      const mode = themeModeRef.current;
+      if (mode === 'minimal') return `rgba(122, 155, 118, ${opacity})`;
+      if (mode === 'dark') return `rgba(187, 134, 252, ${opacity})`;
+      return `rgba(220, 20, 60, ${opacity})`;
+    };
+
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -35,7 +57,7 @@ const FractalParticleBackground = () => {
         if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
       }
       draw() {
-        ctx.fillStyle = 'rgba(200, 200, 200, 0.8)';
+        ctx.fillStyle = getParticleColor();
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -55,7 +77,7 @@ const FractalParticleBackground = () => {
           const dy = particlesArray[a].y - particlesArray[b].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           if (distance < 100) {
-            ctx.strokeStyle = `rgba(200, 200, 200, ${1 - distance / 100})`;
+            ctx.strokeStyle = getLineColor(1 - distance / 100);
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
