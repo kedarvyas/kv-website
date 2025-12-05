@@ -11,11 +11,14 @@ const HighlightRed = ({ children }) => {
   );
 };
 
-const HighlightGray = ({ children }) => (
-  <Text as="span" color="gray.700" fontWeight="bold" display="inline">
-    {children}
-  </Text>
-);
+const HighlightGray = ({ children }) => {
+  const { colorMode } = useColorMode();
+  return (
+    <Text as="span" color={colorMode === 'dark' ? 'gray.300' : 'gray.700'} fontWeight="bold" display="inline">
+      {children}
+    </Text>
+  );
+};
 
 const About = () => {
   const [isMobile] = useMediaQuery("(max-width: 48em)");
@@ -35,7 +38,7 @@ const About = () => {
         <Text fontSize={{ base: "sm", md: "md" }} mb={{ base: 4, md: 6 }}>
           I am a passionate <HighlightGray>Software Engineer</HighlightGray> with 3 years of experience.
           Currently at <HighlightRed>L3Harris Technologies</HighlightRed> working on the <HighlightRed>Advanced Tracking and Launch Analysis System (ATLAS)</HighlightRed> team for the <HighlightGray>Space Command and Control (Space C2)</HighlightGray> effort.
-          Previously on the <HighlightGray>USSF's </HighlightGray><HighlightRed>GMASS</HighlightRed> and <HighlightRed>MOSSAIC</HighlightRed> programs.
+          Previously on the <HighlightGray>USSF's </HighlightGray><HighlightRed>GMASS</HighlightRed> and <HighlightRed>MOSSAIC</HighlightRed> programs. Currently building <HighlightRed>Pulse Finance</HighlightRed>.
         </Text>
 
         <Heading as="h3" size={{ base: "sm", md: "md" }} mb={{ base: 3, md: 4 }}>

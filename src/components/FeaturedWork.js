@@ -5,6 +5,23 @@ import ProjectCard from './ProjectCard';
 const FeaturedWork = () => {
   const projects = [
     {
+      title: 'Pulse Finance',
+      description: 'A native iOS personal finance tracker that helps users monitor their financial health by connecting bank accounts, tracking transactions, and analyzing spending patterns in real-time.',
+      imageUrl: '/pulse.jpg',
+      type: 'iOS App',
+      technologies: ['SwiftUI', 'SwiftData', 'Firebase', 'Plaid API'],
+      projectUrl: 'https://github.com/kedarvyas/PulseFinance'
+    },
+    {
+      title: 'InfiWiki',
+      description: 'An infinite-scroll Wikipedia reader that lets you discover and read random Wikipedia articles endlessly. Search for topics, filter by categories, or keep scrolling through a curated stream of knowledge.',
+      imageUrl: '/infiwiki.jpg',
+      imagePosition: 'top',
+      type: 'Web Application',
+      technologies: ['Next.js 15', 'React 19', 'TypeScript', 'TanStack Query', 'Tailwind CSS'],
+      projectUrl: 'https://infiwiki.netlify.app/'
+    },
+    {
       title: 'FPL League Hub',
       description: 'Hub for Head-to-Head Leagues on Fantasy Premier League. Provides comprehensive statistics and analysis for fantasy football managers.',
       imageUrl: '/fpl-league-hub.jpg',
