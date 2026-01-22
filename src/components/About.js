@@ -38,7 +38,7 @@ const About = () => {
         <Text fontSize={{ base: "sm", md: "md" }} mb={{ base: 4, md: 6 }}>
           I am a passionate <HighlightGray>Software Engineer</HighlightGray> with 3 years of experience.
           Currently at <HighlightRed>L3Harris Technologies</HighlightRed> working on the <HighlightRed>Advanced Tracking and Launch Analysis System (ATLAS)</HighlightRed> team for the <HighlightGray>Space Command and Control (Space C2)</HighlightGray> effort.
-          Previously on the <HighlightGray>USSF's </HighlightGray><HighlightRed>GMASS</HighlightRed> and <HighlightRed>MOSSAIC</HighlightRed> programs. Currently building <HighlightRed>Pulse Finance</HighlightRed>.
+          Previously on the <HighlightGray>USSF's </HighlightGray><HighlightRed>GMASS</HighlightRed> and <HighlightRed>MOSSAIC</HighlightRed> programs. Currently building <HighlightRed>Sanctum</HighlightRed>.
         </Text>
 
         <Heading as="h3" size={{ base: "sm", md: "md" }} mb={{ base: 3, md: 4 }}>

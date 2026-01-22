@@ -5,6 +5,14 @@ import ProjectCard from './ProjectCard';
 const FeaturedWork = () => {
   const projects = [
     {
+      title: 'Sanctum',
+      description: 'A B2B SaaS member check-in platform for organizations. Members use the mobile app to check in via QR codes, while staff manage attendance, families, and donations through a comprehensive web dashboard.',
+      imageUrl: '/sanctum-mockup.png',
+      type: 'Full-Stack Application',
+      technologies: ['React Native', 'Expo', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+      projectUrl: 'https://sanctumapp.vercel.app/'
+    },
+    {
       title: 'Pulse Finance',
       description: 'A native iOS personal finance tracker that helps users monitor their financial health by connecting bank accounts, tracking transactions, and analyzing spending patterns in real-time.',
       imageUrl: '/pulse.jpg',
