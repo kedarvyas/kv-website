@@ -166,10 +166,11 @@ const Header = () => {
       top={0}
       left={0}
       right={0}
-      zIndex={10}
-      bg={themeMode === 'minimal' ? '#f5f1ea' : themeMode === 'dark' ? 'gray.900' : 'white'}
-      borderBottom={themeMode === 'minimal' ? '1px solid #d4cfc4' : themeMode === 'dark' ? '1px solid #222' : '1px solid black'}
-      boxShadow="0 1px 2px rgba(0,0,0,0.1)"
+      zIndex={50}
+      bg={themeMode === 'minimal' ? 'rgba(245, 241, 234, 0.8)' : themeMode === 'dark' ? 'rgba(17, 24, 39, 0.8)' : 'rgba(255, 255, 255, 0.8)'}
+      backdropFilter="blur(12px)"
+      borderBottom="1px solid"
+      borderColor={themeMode === 'minimal' ? 'rgba(212, 207, 196, 0.5)' : themeMode === 'dark' ? 'rgba(55, 65, 81, 0.5)' : 'rgba(0, 0, 0, 0.1)'}
     >
       <Flex
         justifyContent="space-between"
