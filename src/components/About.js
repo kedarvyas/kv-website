@@ -42,7 +42,7 @@ const About = () => {
         </Text>
 
         <Text fontSize={{ base: "sm", md: "md" }} mb={{ base: 4, md: 6 }}>
-          Currently building <HighlightRed>Sanctum</HighlightRed>, a b2b SaaS platform helping organizations streamline membership & engagement. If your interested in early access, I'd love to chat.
+          Currently building <HighlightRed>Sanctum</HighlightRed>, a b2b SaaS platform helping organizations streamline membership & engagement. If you are interested in early access, I'd love to chat.
         </Text>
 
         <Heading as="h3" size={{ base: "sm", md: "md" }} mb={{ base: 3, md: 4 }}>
