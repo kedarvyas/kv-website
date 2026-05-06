@@ -25,8 +25,8 @@ const About = () => {
   const { colorMode } = useColorMode();
 
   const technologies = [
-    "Python", "Java", "React.js", "C++",
-    "TypeScript", "HTML & CSS", 
+    "Python", "Java", "React.js", "Angular",
+    "C++", "TypeScript", "HTML & CSS", "Agentic AI",
   ];
 
   return (
@@ -37,8 +37,8 @@ const About = () => {
       <Box>
         <Text fontSize={{ base: "sm", md: "md" }} mb={{ base: 4, md: 6 }}>
           I am a passionate <HighlightGray>Software Engineer</HighlightGray> with 3 years of experience.
-          Currently at <HighlightRed>L3Harris Technologies</HighlightRed> working on the <HighlightRed>Advanced Tracking and Launch Analysis System (ATLAS)</HighlightRed> team for the <HighlightGray>Space Command and Control (Space C2)</HighlightGray> effort.
-          Previously on the <HighlightGray>USSF's </HighlightGray><HighlightRed>GMASS</HighlightRed> and <HighlightRed>MOSSAIC</HighlightRed> programs. 
+          Currently at <HighlightRed>Booz Allen Hamilton</HighlightRed> as a <HighlightGray>Software Engineer II, Artificial Intelligence</HighlightGray>.
+          Previously at <HighlightRed>L3Harris Technologies</HighlightRed> on the <HighlightRed>Advanced Tracking and Launch Analysis System (ATLAS)</HighlightRed>, the U.S. Space Force platform used to deliver space domain awareness for NASA's <HighlightRed>Artemis II</HighlightRed> lunar mission.
         </Text>
 
         <Text fontSize={{ base: "sm", md: "md" }} mb={{ base: 4, md: 6 }}>
