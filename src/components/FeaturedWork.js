@@ -5,6 +5,14 @@ import ProjectCard from './ProjectCard';
 const FeaturedWork = () => {
   const projects = [
     {
+      title: 'World Cup 2026 Predictor',
+      description: 'ML forecasting system for the 2026 FIFA World Cup pairing two competing models — an Elo-fed multinomial logistic regression and a Dixon-Coles goals model — to run a 10,000-simulation Monte Carlo of the real 48-team tournament. All 144 pre-tournament forecasts were SHA256-receipted before kickoff, and a live dashboard re-simulates and grades them against real results as matches are played.',
+      imageUrl: '/world-cup-predictor.jpg',
+      type: 'Machine Learning',
+      technologies: ['Python', 'pandas', 'NumPy', 'scikit-learn', 'SciPy', 'Streamlit', 'Matplotlib', 'Seaborn'],
+      projectUrl: 'https://github.com/kedarvyas/WorldCupPredictor'
+    },
+    {
       title: 'Sanctum',
       description: 'A B2B SaaS member check-in platform for organizations. Members use the mobile app to check in via QR codes, while staff manage attendance, families, and donations through a comprehensive web dashboard.',
       imageUrl: '/sanctum-mockup.png',
